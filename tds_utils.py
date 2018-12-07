@@ -282,6 +282,12 @@ def predlin(s,p,w):
     plt.plot(20*np.log10(np.abs(h2[0:len(w)])))
    
 
+def predlin2(s,p,w):
+    x = s*w
+    
+    lpc,e = spectrum.lpc(x,N = p)
+    return lpc
+
 #Complex cepstrum from python-acoustics
 #https://github.com/python-acoustics/python-acoustics/blob/master/acoustics/cepstrum.py
 def complex_cepstrum(x, n=None):
